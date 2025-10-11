@@ -1,4 +1,19 @@
 from random import randint
+import os
+
+# ---------- Mandatory directorys ----------
+def ensure_directories():
+    """Garante que todas as pastas necessárias existam"""
+    required_dirs = ["keys"]
+    for directory in required_dirs:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+            print(f"✅ Pasta '{directory}' criada automaticamente")
+            # Verificar se shared_messages.txt existe
+        if not os.path.exists("shared_messages.txt"):
+            open("shared_messages.txt", "w").close()
+            print("✅ Arquivo 'shared_messages.txt' criado automaticamente")
+        
 
 # ---------- Basic math algorithms ----------
 def gcd(a, b):

@@ -5,6 +5,7 @@ from rsa_core import *
 class ChatUser:
     def __init__(self, user_name):
         self.user_name = user_name
+        ensure_directories()  
         self.load_or_generate_keys()
         self.load_other_user_public_key()
     
